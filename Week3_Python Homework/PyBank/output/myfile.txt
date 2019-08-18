@@ -1,0 +1,10 @@
+Financial Analysis
+---------------------------------------
+Total Months: 86
+Total Months.. list count method: 86. I had tp prove to myself that I could do it this way too...
+Total profits/loss = $38382578
+AVG CHANGE = $-2315.12
+Greatest Increase ['Month', 'Profit'] & Change in profit from previous month: ['Feb-12', '1170593'] $1926159
+Greatest Decrease ['Month', 'Profit'] & Change in profit from previous month: ['Sep-13', '-1196225'] $-2196167
+I included all 3 data points because it was diffidult to get only the month from the csvreader list and then reference the index to bring the max/min change from that month...  
+I had already found the max/min and was able to use that index to pull month and total profit/loss from the original csvreader...   Thank you for the help.
