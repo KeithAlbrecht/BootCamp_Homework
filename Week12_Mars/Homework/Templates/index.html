@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" media="screen" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <style>
+    body, .jumbotron {background-color: rgba(199, 79, 32, 0.658);-moz-text-decoration-color: aliceblue;}
+    .btn {
+      background-color: rgb(230, 145, 67);
+      border: none; text-emphasis-color: rgb(93, 205, 209);
+    }
+    .weather {
+      background-color: rgb(180, 88, 3);
+      color: rgb(10, 11, 12);
+    }
+    .weather h4, .hemisphere-titles {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars </h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Update Data</a></p>
+    </div>
+
+    <!-- Mars Data -->
+    <div class="row" id="mars-data">
+      <div class="col-md-12 col-sm-12">
+        <h2 text-align: center class="news" style="text-align: center;">Mars News</h2>
+        <h4 text-align: center class="heading"style="text-align: center;">{{Mars_Info.Title}}</h4>
+        <p style="text-align: center;">{{Mars_Info.Info}}</p>
+      </div>
+      <div class="col-md-8 col-sm-12">
+        <h2 class="featured-image">Featured Image</h2>
+        <img src= {{ Mars_Info.Image }} height=auto width=750px>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-body weather">
+            <h3 style="text-align: center;">Current Weather on Mars</h3>
+            {{ Mars_Info.Weather }}
+          </div>
+        </div>
+        <h4>Mars Facts</h4>
+        <p>{{ Mars_Info.Facts1 | safe }}</p>
+        <p>{{ Mars_Info.Facts2 | safe }}</p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <h3 id="hemisphere_title" style="text-align: center;" >Mars Hemispheres</h3>
+          <hr>
+          <div class="row">
+            <div class="col-md-6 hemispheres">
+              <div class="panel panel-default">
+                  <div class="panel-header">
+                    <img src = {{ Mars_Info.Hemispheres[0].Image_URL}} width="100%">
+                  </div>
+                  <div class="panel-body hemisphere-titles">
+                    <h4>{{ Mars_Info.Hemispheres[0].Title }}</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6 hemispheres">
+              <div class="panel panel-default">
+                  <div class="panel-header">
+                    <img src = {{ Mars_Info.Hemispheres[1].Image_URL}} width="100%">
+                  </div>
+                  <div class="panel-body hemisphere-titles">
+                    <h4>{{ Mars_Info.Hemispheres[1].Title }}</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6 hemispheres">
+              <div class="panel panel-default">
+                  <div class="panel-header">
+                    <img src = {{ Mars_Info.Hemispheres[2].Image_URL}} width="100%">
+                  </div>
+                  <div class="panel-body hemisphere-titles">
+                    <h4>{{ Mars_Info.Hemispheres[2].Title }}</h4>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6 hemispheres">
+              <div class="panel panel-default">
+                  <div class="panel-header">
+                    <img src = {{ Mars_Info.Hemispheres[3].Image_URL}} width="100%">
+                  </div>
+                  <div class="panel-body hemisphere-titles">
+                    <h4>{{ Mars_Info.Hemispheres[3].Title }}</h4>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
